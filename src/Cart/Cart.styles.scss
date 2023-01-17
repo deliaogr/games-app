@@ -13,6 +13,20 @@
     color: #430f58;
   }
 
+  .EmptyCartMessage {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    line-height: 20px;
+
+    .Link {
+      text-decoration: none;
+      color: #430f58;
+    }
+  }
+
   .GamesList {
     overflow: auto;
     max-height: 500px;

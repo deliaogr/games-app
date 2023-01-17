@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import List from "./List/List";
 import Cart from "./Cart/Cart";
+import Header from "./Header/Header";
 import "./App.css";
 
 const options = {
@@ -27,10 +29,12 @@ function App() {
 
   useEffect(() => {
     getDataFromAPI(url)
-      .then((data) => setList(data.map((item) => ({ ...item, quantity: 1, price: 5 }))))
+      .then((data) =>
+        setList(data.map((item) => ({ ...item, quantity: 1, price: 5 })))
+      )
       .catch((err) => console.log(err));
   }, []);
-  
+
   useEffect(() => {
     function handleBeforeUnload(event) {
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -78,8 +82,15 @@ function App() {
 
   return (
     <div className="App">
-      <List list={list} addToCart={addToCart} />
-      <Cart cart={cart} setCart={setCart} />
+      <Header />
+      <Routes>
+        <Route path="*" element={<Navigate to="/list" />} />
+        <Route
+          path="/list"
+          element={<List list={list} addToCart={addToCart} />}
+        />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+      </Routes>
     </div>
   );
 }
