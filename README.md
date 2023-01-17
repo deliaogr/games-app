@@ -12,7 +12,7 @@ A fun and interactive app for learning, built with Create React App, Sass, SCSS,
 ## Installation
 To get started, clone or download the repository and install the dependencies.
 ```bash
-git clone https://github.com/YOUR_USERNAME/learn-and-play.git
+git clone https://github.com/deliaogr/games-app.git
 cd learn-and-play
 npm install
 ```
