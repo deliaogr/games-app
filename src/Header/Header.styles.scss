@@ -1,3 +1,5 @@
+@import "../sass/variables";
+
 .HeaderContainer {
   position: absolute;
   top: 0;
@@ -5,18 +7,32 @@
   right: 0;
   height: 50px;
   width: 100%;
-  background-color: #8594e4;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   .MenuItem {
     text-decoration: none;
-    color: #430f58;
     font-weight: 600;
     padding: 10px;
-    border: 1px solid #430f58;
     border-radius: 10px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .Actions {
+    .MenuItem:first-of-type {
+      margin-right: 35px;
+    }
+  }
+
+  .Button {
+    border-radius: 10px;
+    padding: 9px 15px;
+    font-weight: 600;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.8;

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import List from "./List/List";
 import Cart from "./Cart/Cart";
 import Header from "./Header/Header";
-import "./App.css";
+import { ThemeContext } from "./context/ThemeContext";
+import "./App.scss";
 
 const options = {
   method: "GET",
@@ -26,6 +27,7 @@ const getDataFromAPI = async (url) => {
 function App() {
   const [list, setList] = useState([]);
   const [cart, setCart] = useState(initialCart());
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     getDataFromAPI(url)
@@ -81,7 +83,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${theme === "light" ? "Light" : "Dark"}`}>
       <Header />
       <Routes>
         <Route path="*" element={<Navigate to="/list" />} />

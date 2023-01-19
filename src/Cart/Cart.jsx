@@ -44,7 +44,7 @@ const Cart = ({ cart, setCart }) => {
   }
 
   return (
-    <div className="CartContainer">
+    <div className="Container">
       <h1 className="Title">Cart</h1>
       {!cart.length ? (
         <div className="EmptyCartMessage">
