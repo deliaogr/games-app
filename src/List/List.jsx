@@ -3,7 +3,7 @@ import "./List.styles.scss";
 
 const List = ({ list, addToCart }) => {
   return (
-    <div className="ListContainer">
+    <div className="Container">
       <h1 className="Title">Games</h1>
       <div className="GamesList">
         {list.map((listItem, index) => {

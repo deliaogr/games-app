@@ -1,0 +1,235 @@
+@import "./sass/variables";
+
+/* Set core body defaults */
+.App {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+  // background-color: #d5def5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-feature-settings: "pnum" 1, "lnum" 1;
+
+  .Container {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 500px;
+    min-height: 600px;
+    position: relative;
+
+    .Title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .Link {
+      text-decoration: none;
+    }
+
+    .GamesList {
+      overflow: auto;
+      max-height: 500px;
+      margin-bottom: 20px;
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar {
+        border-radius: 10px;
+        width: 12px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .ListItem {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+
+        .FirstRow {
+          display: flex;
+          align-items: center;
+
+          .Index {
+            font-weight: 600;
+            margin-right: 10px;
+            min-width: 30px;
+          }
+
+          .Thumbnail {
+            width: 35px;
+            height: 35px;
+          }
+
+          .ItemName {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 0 10px;
+
+            .Button {
+              border-radius: 10px;
+              padding: 10px;
+              height: 35px;
+              font-weight: 600;
+              cursor: pointer;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+
+            .Quantity {
+              font-weight: 600;
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .SecondRow {
+          margin-left: 85px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.Dark {
+  background-color: $first-color-dark;
+
+  .HeaderContainer {
+    background-color: $second-color-dark;
+
+    .MenuItem {
+      color: $fourth-color-dark;
+      border: 1px solid $fourth-color-dark;
+    }
+
+    .Button {
+      background-color: $third-color-dark;
+      color: $white;
+      border: 1px solid $fourth-color-dark;
+    }
+  }
+
+  .Container {
+    background-color: $second-color-dark;
+
+    .Title {
+      color: $fourth-color-dark;
+    }
+
+    .Link {
+      color: $fourth-color-dark;
+    }
+
+    .GamesList {
+      &::-webkit-scrollbar-track {
+        background-color: $first-color-dark;
+      }
+
+      &::-webkit-scrollbar {
+        background-color: $first-color-dark;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $fourth-color-dark;
+      }
+    }
+
+    .FirstRow {
+      .Index {
+        color: $white;
+      }
+
+      .ItemName {
+        color: $white;
+
+        .Button {
+          background-color: $third-color-dark;
+          color: $white;
+          border: 1px solid $fourth-color-dark;
+        }
+      }
+    }
+
+    .SecondRow {
+      color: $white;
+    }
+  }
+}
+
+.Light {
+  background-color: $first-color-light;
+
+  .HeaderContainer {
+    background-color: $second-color-light;
+
+    .MenuItem {
+      color: $fourth-color-light;
+      border: 1px solid $fourth-color-light;
+    }
+
+    .Button {
+      background-color: $third-color-light;
+      color: $white;
+      border: 1px solid $fourth-color-light;
+    }
+  }
+
+  .Container {
+    background-color: $second-color-light;
+
+    .Title {
+      color: $fourth-color-light;
+    }
+
+    .Link {
+      color: $fourth-color-light;
+    }
+
+    .GamesList {
+      &::-webkit-scrollbar-track {
+        background-color: $first-color-light;
+      }
+
+      &::-webkit-scrollbar {
+        background-color: $first-color-light;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $fourth-color-light;
+      }
+    }
+
+    .FirstRow {
+      .Index {
+        color: $black;
+      }
+
+      .ItemName {
+        color: $black;
+
+        .Button {
+          background-color: $third-color-light;
+          color: $white;
+          border: 1px solid $fourth-color-light;
+        }
+      }
+    }
+
+    .SecondRow {
+      color: $black;
+    }
+  }
+}
