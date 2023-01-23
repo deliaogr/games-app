@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/cartSlice";
 import "./List.styles.scss";
 
-const List = ({ list, addToCart }) => {
+const List = ({ list }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="Container">
       <h1 className="Title">Games</h1>
@@ -20,15 +24,13 @@ const List = ({ list, addToCart }) => {
                   <div>{listItem.title}</div>
                   <button
                     className="Button"
-                    onClick={() => addToCart(listItem)}
+                    onClick={() => dispatch(addItem(listItem))}
                   >
                     Add to cart
                   </button>
                 </div>
               </div>
-              <div className="SecondRow">
-                ${listItem.price}
-              </div>
+              <div className="SecondRow">${listItem.price}</div>
             </div>
           );
         })}

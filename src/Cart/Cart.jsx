@@ -1,54 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItem, increment, decrement } from "../redux/cartSlice";
 import "./Cart.styles.scss";
 
-const Cart = ({ cart, setCart }) => {
+const Cart = () => {
   const [show, setShow] = useState(-1);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-  const raiseQuantity = (item) => {
-    setCart(
-      cart.map((game) => {
-        return game.id === item.id
-          ? { ...game, quantity: game.quantity + 1 }
-          : game;
-      })
-    );
-  };
-
-  const decreaseQuantity = (item) => {
-    if (item.quantity === 1) {
-      return removeGame(item);
-    }
-    setCart(
-      cart.map((game) => {
-        return game.id === item.id
-          ? { ...game, quantity: game.quantity - 1 }
-          : game;
-      })
-    );
-  };
-
-  const removeGame = (item) => {
-    setCart(
-      cart.filter((game) => {
-        return game.id !== item.id;
-      })
-    );
-  };
-
-  function calculateTotalPrice(cart) {
+  const calculateTotalPrice = (cart) => {
     const total = cart.reduce((acc, game) => {
       return acc + game.quantity * game.price;
     }, 0);
     return total;
-  }
+  };
 
   return (
     <div className="Container">
       <h1 className="Title">Cart</h1>
       {!cart.length ? (
         <div className="EmptyCartMessage">
-          The cart is empty! <br /> Go to <Link to="/list" className="Link">Games</Link>.
+          The cart is empty! <br /> Go to{" "}
+          <Link to="/list" className="Link">
+            Games
+          </Link>
+          .
         </div>
       ) : (
         <>
@@ -87,14 +64,14 @@ const Cart = ({ cart, setCart }) => {
                           <div className="EditQuantity">
                             <button
                               className="Button"
-                              onClick={() => raiseQuantity(cartItem)}
+                              onClick={() => dispatch(increment(cartItem))}
                             >
                               +
                             </button>
 
                             <button
                               className="Button"
-                              onClick={() => decreaseQuantity(cartItem)}
+                              onClick={() => dispatch(decrement(cartItem))}
                             >
                               -
                             </button>
@@ -105,7 +82,7 @@ const Cart = ({ cart, setCart }) => {
 
                         <button
                           className="Button"
-                          onClick={() => removeGame(cartItem)}
+                          onClick={() => dispatch(removeItem(cartItem))}
                         >
                           <xml version="1.0" encoding="utf-8" />
                           <svg
