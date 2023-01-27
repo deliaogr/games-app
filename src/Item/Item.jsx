@@ -55,7 +55,7 @@ const Item = () => {
         <div>Release Date: {item.release_date}</div>
         <div className="Price">Price: ${item.price}</div>
       </div>
-      <button className="Edit Button">Edit game</button>
+      <button className="EditItem Button">Edit game</button>
     </div>
   );
 };
