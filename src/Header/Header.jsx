@@ -11,7 +11,7 @@ const Header = () => {
       className={`HeaderContainer`}
     >
       <div className="Actions">
-        <Link to="/list" className="MenuItem">
+        <Link to="/" className="MenuItem">
           Games
         </Link>
         <Link to="/cart" className="MenuItem">

@@ -26,6 +26,19 @@
 
     .Link {
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    .Button {
+      border-radius: 10px;
+      padding: 10px;
+      height: 35px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     .GamesList {
@@ -75,18 +88,6 @@
             width: 100%;
             margin: 0 10px;
 
-            .Button {
-              border-radius: 10px;
-              padding: 10px;
-              height: 35px;
-              font-weight: 600;
-              cursor: pointer;
-
-              &:hover {
-                opacity: 0.8;
-              }
-            }
-
             .Quantity {
               font-weight: 600;
               margin-right: 10px;
@@ -123,6 +124,7 @@
 
   .Container {
     background-color: $second-color-dark;
+    color: $white;
 
     .Title {
       color: $fourth-color-dark;
@@ -130,6 +132,12 @@
 
     .Link {
       color: $fourth-color-dark;
+    }
+
+    .Button {
+      background-color: $third-color-dark;
+      color: $white;
+      border: 1px solid $fourth-color-dark;
     }
 
     .GamesList {
@@ -153,12 +161,6 @@
 
       .ItemName {
         color: $white;
-
-        .Button {
-          background-color: $third-color-dark;
-          color: $white;
-          border: 1px solid $fourth-color-dark;
-        }
       }
     }
 
@@ -188,6 +190,7 @@
 
   .Container {
     background-color: $second-color-light;
+    color: $black;
 
     .Title {
       color: $fourth-color-light;
@@ -195,6 +198,12 @@
 
     .Link {
       color: $fourth-color-light;
+    }
+
+    .Button {
+      background-color: $third-color-light;
+      color: $white;
+      border: 1px solid $fourth-color-light;
     }
 
     .GamesList {
@@ -218,12 +227,6 @@
 
       .ItemName {
         color: $black;
-
-        .Button {
-          background-color: $third-color-light;
-          color: $white;
-          border: 1px solid $fourth-color-light;
-        }
       }
     }
 

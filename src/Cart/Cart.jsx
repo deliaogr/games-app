@@ -22,7 +22,7 @@ const Cart = () => {
       {!cart.length ? (
         <div className="EmptyCartMessage">
           The cart is empty! <br /> Go to{" "}
-          <Link to="/list" className="Link">
+          <Link to="/" className="Link">
             Games
           </Link>
           .
@@ -41,7 +41,9 @@ const Cart = () => {
                       alt="thumbnail"
                     />
                     <div className="ItemName">
-                      {cartItem.title}
+                      <Link to={`/game/${cartItem.id}`} className="Link">
+                        {cartItem.title}
+                      </Link>
                       <div className="ButtonsAndQuantity">
                         <div className="Quantity">x{cartItem.quantity}</div>
                         <button
