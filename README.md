@@ -4,6 +4,8 @@ A fun and interactive app for learning, built with Create React App, Sass, SCSS,
 ## Features
 - A list of different games from a free API
 - A cart for saving your favorite games
+- A page for each item in the list
+- The ability to edit each item
 - Sass and SCSS for styling
 - React.Context for managing global state
 - Redux Toolkit for managing complex state
