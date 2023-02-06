@@ -11,7 +11,7 @@ const Cart = () => {
 
   const calculateTotalPrice = (cart) => {
     const total = cart.reduce((acc, game) => {
-      return acc + game.quantity * game.price;
+      return acc + +game.quantity * +game.price;
     }, 0);
     return total;
   };
